@@ -1,0 +1,29 @@
+name: Deploy
+run-name: ${{ github.actor }} is deploying content
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ['1.25']
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Install dependencies
+        run: |
+          go clean -modcache
+          go install larana.tech/go/electrostatic@v0.1.9
+      - name: Build
+        run: electrostatic -m export -r ./
+      - name: setup ssh
+        run: |
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ./.id_rsa && chmod 600 ./.id_rsa
+      - name: deploy
+        run: scp -o StrictHostKeyChecking=no -i ./.id_rsa -r ./dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/larana.tech
