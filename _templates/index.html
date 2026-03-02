@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>%title%</title>
+	{{.meta}}
 	<link rel="stylesheet" href="/style.css">
 	<link rel="stylesheet" href="/monokai.css">
-	<meta name="description" content="%description%">
-	<meta name="keywords" content="%keywords%">
 </head>
 <body>
 	<div class="wrapper">
@@ -20,7 +18,7 @@
 			</nav>
 		</header>
 		<main class="main">
-			%CONTENT%
+			{{.content}}
 		</main>
 		<footer class="footer">
 			<div class="footer-row">
@@ -28,8 +26,8 @@
 				<a href="https://t.me/laranatech" target="_blank">tg: @laranatech</a>
 				<a href="/donate">Donate</a>
 			</div>
-			<div>© 2026, larana.tech</div>
-			<div>powered by <a href="https://github.com/laranatech/electrostatic" target="_blank">@laranatech/electrostatic</a></div>
+			<div>© 2025, larana.tech</div>
+			<div>powered by <a href="/electrostatic">@laranatech/electrostatic</a></div>
 		</footer>
 	</div>
 </body>

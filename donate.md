@@ -8,8 +8,8 @@ keywords: donate, support
 
 - [Boosty](https://boosty.to/kucheriavyi)
 - [Patreon](https://patreon.com/kucheriavyi)
-- BTC: bc1qhepkkygzrr94xm7v0wte52gv6el9374yj0yesq
-- USDT (ERC20): 0xaC08b97b7fE924300FC28db28B80e9893C9fb40E
+- BTC: `bc1qhepkkygzrr94xm7v0wte52gv6el9374yj0yesq`
+- USDT (ERC20): `0xaC08b97b7fE924300FC28db28B80e9893C9fb40E`
 
 ## Contribute
 
